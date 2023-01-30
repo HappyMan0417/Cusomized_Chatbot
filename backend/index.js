@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.post('/completion', async (req, res) => {
   const prompt = req.body.prompt;
-  const API_KEY = "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";
+  const API_KEY = "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";
 
   try {
     const response = await axios({
