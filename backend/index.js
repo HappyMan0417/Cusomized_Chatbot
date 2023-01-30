@@ -12,7 +12,7 @@ app.use(express.json());
 app.post('/completion', async (req, res) => {
   const prompt = req.body.prompt;
   const API_KEY = process.env.OPENAI_API_KEY;
-  console.log(API_KEY);
+  // console.log(API_KEY);
 
   try {
     const response = await axios({
