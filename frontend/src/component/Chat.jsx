@@ -27,8 +27,10 @@ const Chat = () => {
 
 
     return (
-        <div style={{ float: "right", display: "", justifyContent: "center", flexDirection: "column" }}>
-            <div style={{ width: "500px", padding: "20px" }}>
+        <div style={{ float: "right", display: "", justifyContent: "center", flexDirection: "column",  position: "absolute",
+        bottom: "0",     right: "16vw"
+         }}>
+            <div style={{ width: "45vw", padding: "20px" }}>
 
                 <div style={{ display: "", justifyContent: "center", flexDirection: "column", marginTop: "20px" }}>
                     {completions.map((msg, index) => (
@@ -59,7 +61,7 @@ const Chat = () => {
                 <form onSubmit={handleSubmit} style={{ display: "flex", alignItems: "center" }}>
                     <input
                         style={{
-                            width: "305px",
+                            width: "605px",
                             fontSize: "13px",
                             padding: "10px",
                             borderRadius: "5px",
