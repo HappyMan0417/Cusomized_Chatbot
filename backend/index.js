@@ -5,19 +5,41 @@ const axios = require('axios');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-
-
 app.use(express.json());
+const fs = require('fs');
+const csv = require('csv-parser');
+
+let dataArray = [];
+
+fs.createReadStream('dataset.csv')
+  .pipe(csv())
+  .on('data', (data) => {
+    dataArray.push(data);
+  })
+  .on('end', () => {
+    processData(dataArray);
+  });
+
+  
+const processData = (data) => {
+  console.log(data);
+};
 
 app.post('/completion', async (req, res) => {
   const prompt = req.body.prompt;
+  const matchingData = dataArray.find((d) => d.name === prompt);
+
+  if (matchingData) {
+    res.send(matchingData.height);
+    return;
+  }
+
   const API_KEY = process.env.OPENAI_API_KEY;
-  // console.log(API_KEY);
 
   try {
     const response = await axios({
       method: 'post',
-      url: 'https://api.openai.com/v1/engines/text-davinci-002/completions',
+      url: 'https://api.openai.com/v1/engines/text-babbage-001/completions',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`
