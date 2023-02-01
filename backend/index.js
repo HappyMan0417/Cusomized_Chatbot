@@ -22,7 +22,7 @@ fs.createReadStream('products.csv')
 
   
 const processData = (data) => {
-  console.log(data);
+  // console.log(data);
 };
 
 app.post('/completion', async (req, res) => {
