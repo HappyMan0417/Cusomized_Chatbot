@@ -26,7 +26,15 @@ const App = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={prompt} placeholder="Enter prompt" onChange={(e) => setPrompt(e.target.value)} />
+        <input
+        
+        style={{
+          height: "50px",
+          width: "460px",
+          fontSize: "20px",
+        }}
+        
+        type="text" value={prompt} placeholder="Enter prompt" onChange={(e) => setPrompt(e.target.value)} />
         <button type="button" onMouseDown={listen} onMouseUp={stop}>🎤</button>
         <button type="submit">Submit</button>
       </form>

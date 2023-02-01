@@ -11,7 +11,7 @@ const csv = require('csv-parser');
 
 let dataArray = [];
 
-fs.createReadStream('dataset.csv')
+fs.createReadStream('products.csv')
   .pipe(csv())
   .on('data', (data) => {
     dataArray.push(data);
@@ -30,7 +30,7 @@ app.post('/completion', async (req, res) => {
   const matchingData = dataArray.find((d) => d.name === prompt);
 
   if (matchingData) {
-    res.send(matchingData.height);
+    res.send(matchingData.price);
     return;
   }
 
