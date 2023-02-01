@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useSpeechRecognition } from 'react-speech-kit';
 
 const App = () => {
-  const [completion, setCompletion] = useState('');
+  const [completions, setCompletions] = useState([]);
   const [prompt, setPrompt] = useState('');
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
@@ -17,31 +17,93 @@ const App = () => {
       const response = await axios.post('http://localhost:5000/completion', {
         prompt: prompt
       });
-      setCompletion(response.data);
+      setCompletions([...completions, { prompt, completion: response.data }]);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-        
-        style={{
-          width: "460px",
-          fontSize: "13px",
-        }}
-        
-        type="text" value={prompt} placeholder="Enter prompt" onChange={(e) => setPrompt(e.target.value)} />
-        <button type="button" onMouseDown={listen} onMouseUp={stop}>🎤</button>
-        <button type="submit">Send</button>
-      </form>
-      <p>Message: {completion}</p>
-      
+    <div style={{ display: "", justifyContent: "center", flexDirection: "column" }}>
+      <div style={{ width: "500px", padding: "20px" }}>
+
+        <div style={{ display: "", justifyContent: "center", flexDirection: "column", marginTop: "20px" }}>
+          {completions.map((msg, index) => (
+            <div key={index} style={{ display: "", justifyContent: "space-between", marginBottom: "10px" }}>
+              <div style={{
+                backgroundColor: "lightgray",
+                padding: "10px",
+                borderRadius: "10px",
+                width: "90%"
+              }}>
+                <p>You: {msg.prompt}</p>
+              </div>
+              &nbsp;
+              <div style={{
+                backgroundColor: "lightblue",
+                padding: "10px",
+                borderRadius: "10px",
+                width: "90%"
+              }}>
+                <p>Message: {msg.completion}</p>
+              </div>
+              &nbsp;
+
+            </div>
+          ))}
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ display: "flex", alignItems: "center" }}>
+          <input
+            style={{
+              width: "305px",
+              fontSize: "13px",
+              padding: "10px",
+              borderRadius: "5px",
+              border: "1px solid #ccc",
+              marginRight: "10px"
+            }}
+            type="text"
+            value={prompt}
+            placeholder="Enter Message"
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+          <button
+            style={{
+              backgroundColor: "white",
+              color: "white",
+              padding: "10px 20px",
+              border: "1px solid #018CBA",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+            type="button"
+            onMouseDown={listen}
+            onMouseUp={stop}
+          >
+           🔊
+          </button>
+          &nbsp;
+          <button
+            style={{
+              backgroundColor: "#008CBA",
+              color: "white",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+
+
+
+      </div>
     </div>
   );
 };
 
 export default App;
-
