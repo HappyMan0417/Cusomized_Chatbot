@@ -14,7 +14,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/completion', {
+      const response = await axios.post('http://localhost:5000/completion', {
         prompt: prompt
       });
       setCompletion(response.data);
@@ -29,16 +29,16 @@ const App = () => {
         <input
         
         style={{
-          height: "50px",
           width: "460px",
-          fontSize: "20px",
+          fontSize: "13px",
         }}
         
         type="text" value={prompt} placeholder="Enter prompt" onChange={(e) => setPrompt(e.target.value)} />
         <button type="button" onMouseDown={listen} onMouseUp={stop}>🎤</button>
-        <button type="submit">Submit</button>
+        <button type="submit">Send</button>
       </form>
-      <p>Completion: {completion}</p>
+      <p>Message: {completion}</p>
+      
     </div>
   );
 };
