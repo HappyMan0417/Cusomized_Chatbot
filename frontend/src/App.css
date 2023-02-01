@@ -14,6 +14,7 @@ body {
   background-color: #2C2C2F;
   overflow-x: hidden;
   padding-top: 8px;
+  padding-left: 8px;
 }
 
 .sidenav a {
@@ -40,11 +41,11 @@ body {
 }
 .new-chat-button {
   background-color: transparent;
-  width: 98%;
-  border: 1px solid gray;
-  border-radius: 3px;
+  width: 95%;
+  border: .3px solid gray;
+  border-radius: 5px;
   color: rgb(252, 252, 252);
-  padding: 10px 10px ;
+  padding: 11px 11px ;
   cursor: pointer;
   display: inline-flex;
   align-items: center;

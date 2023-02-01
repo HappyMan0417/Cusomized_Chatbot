@@ -7,7 +7,7 @@ function Sidenav() {
             <body>
 
                 <div class="sidenav">
-                <button class="new-chat-button"> <span class="plus-sign">+ &nbsp; </span> New Chat </button>
+                <button class="new-chat-button"> <span class="plus-sign">+ &nbsp; </span> New chat </button>
                  
                 </div>
 
