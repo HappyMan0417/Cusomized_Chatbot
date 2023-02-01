@@ -11,7 +11,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #2C2C2F;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -37,4 +37,28 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+.new-chat-button {
+  background-color: transparent;
+  width: 98%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: rgb(252, 252, 252);
+  padding: 10px 10px ;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.new-chat-button:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+.new-chat-button .plus-sign {
+  margin-left: 10px;
+  font-size: 18px;
 }
