@@ -42,7 +42,7 @@ body {
 .new-chat-button {
   background-color: transparent;
   width: 95%;
-  border: .3px solid gray;
+  border: .03px solid gray;
   border-radius: 5px;
   color: rgb(252, 252, 252);
   padding: 11px 11px ;
