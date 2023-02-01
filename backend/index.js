@@ -39,7 +39,7 @@ app.post('/completion', async (req, res) => {
   try {
     const response = await axios({
       method: 'post',
-      url: 'https://api.openai.com/v1/engines/text-babbage-001/completions',
+      url: 'https://api.openai.com/v1/engines/text-davinci-003/completions',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`
