@@ -45,7 +45,7 @@ const App = () => {
                 borderRadius: "10px",
                 width: "90%"
               }}>
-                <p>Message: {msg.completion}</p>
+                <p>Completion: {msg.completion}</p>
               </div>
               &nbsp;
 
