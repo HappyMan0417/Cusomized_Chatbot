@@ -27,16 +27,26 @@ const Chat = () => {
 
 
     return (
-        <div style={{ float: "right", display: "", justifyContent: "center", flexDirection: "column",  position: "absolute",
-        bottom: "0",     right: "16vw"
-         }}>
+
+
+        <div style={{
+            float: "right", display: "", justifyContent: "center", flexDirection: "column", position: "absolute",
+            top: "0", right: "16vw"
+        }}>
             <div style={{ width: "45vw", padding: "20px" }}>
 
-                <div style={{ display: "", justifyContent: "center", flexDirection: "column", marginTop: "20px" }}>
+                <div style={{
+                    display: "", justifyContent: "center", flexDirection: "column"
+                }}>
                     {completions.map((msg, index) => (
-                        <div key={index} style={{ display: "", justifyContent: "space-between", marginBottom: "10px" }}>
+                        <div key={index} style={{
+                            display: "", justifyContent: "space-between", marginBottom: "10px",
+
+                        }}>
                             <div style={{
-                                backgroundColor: "lightgray",
+
+                                backgroundColor: "#343541",
+                                color: "white",
                                 padding: "10px",
                                 borderRadius: "10px",
                                 width: "90%"
@@ -45,7 +55,11 @@ const Chat = () => {
                             </div>
                             &nbsp;
                             <div style={{
-                                backgroundColor: "lightblue",
+                                backgroundColor: "#434654",
+
+                                color: "white",
+
+
                                 padding: "10px",
                                 borderRadius: "10px",
                                 width: "90%"
@@ -58,56 +72,73 @@ const Chat = () => {
                     ))}
                 </div>
 
-                <form onSubmit={handleSubmit} style={{ display: "flex", alignItems: "center" }}>
-                    <input
-                        style={{
-                            width: "605px",
-                            fontSize: "13px",
-                            padding: "10px",
-                            borderRadius: "5px",
-                            border: "1px solid #ccc",
-                            marginRight: "10px"
-                        }}
-                        type="text"
-                        value={prompt}
-                        placeholder="Enter Message"
-                        onChange={(e) => setPrompt(e.target.value)}
-                    />
-                    <button
-                        style={{
-                            backgroundColor: "white",
-                            color: "white",
-                            padding: "10px 20px",
-                            border: "1px solid #018CBA",
-                            borderRadius: "5px",
-                            cursor: "pointer"
-                        }}
-                        type="button"
-                        onMouseDown={listen}
-                        onMouseUp={stop}
-                    >
-                        🔊
-                    </button>
-                    &nbsp;
-                    <button
-                        style={{
-                            backgroundColor: "#008CBA",
-                            color: "white",
-                            padding: "10px 20px",
-                            border: "none",
-                            borderRadius: "5px",
-                            cursor: "pointer"
-                        }}
-                        type="submit"
-                    >
-                        Send
-                    </button>
-                </form>
+
 
 
 
             </div>
+
+
+            <form onSubmit={handleSubmit} style={{
+                display: "flex", alignItems: "center",
+
+                position: "fixed",
+                bottom: "0",
+                padding: "30px"
+            }}>
+                <input
+                    style={{
+                        width: "605px",
+                        fontSize: "13px",
+                        padding: "10px",
+                        borderRadius: "5px",
+                        border: "1px solid #ccc",
+                        marginRight: "10px"
+                    }}
+                    type="text"
+                    value={prompt}
+                    placeholder="Enter Message"
+                    onChange={(e) => setPrompt(e.target.value)}
+                />
+                <button
+                    style={{
+                        backgroundColor: "white",
+                        color: "white",
+                        padding: "10px 20px",
+                        border: "1px solid #018CBA",
+                        borderRadius: "5px",
+                        cursor: "pointer"
+                    }}
+                    type="button"
+                    onMouseDown={listen}
+                    onMouseUp={stop}
+                >
+                    🔊
+                </button>
+                &nbsp;
+                <button
+                    style={{
+                        backgroundColor: "#008CBA",
+                        color: "white",
+                        padding: "10px 20px",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer"
+                    }}
+                    type="submit"
+                >
+                    Send
+                </button>
+            </form>
+            <br />
+            <br />
+            <div>
+                
+            </div>
         </div>
+
+
+
     );
 
 
