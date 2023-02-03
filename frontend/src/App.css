@@ -130,7 +130,8 @@ nav svg {
   position: relative;
   line-height: 24px;
   color: #d1d5db;
-  font-size: 16px;
+  font-size: 12px;
+  
 }
 #introsection::before,
 #introsection::after {
@@ -262,12 +263,14 @@ nav svg {
 @media screen and (min-width: 768px) {
   .inputPromptWrapper {
     position: absolute;
+
   }
 }
 
 @media screen and (max-width: 1024px) {
   .App {
     display: block;
+    
   }
   header {
     display: flex;
@@ -284,6 +287,7 @@ nav svg {
   }
   .chatBox {
     position: static;
+    
   }
   .chatPromptWrapper {
     padding: 12px;
@@ -307,7 +311,7 @@ nav svg {
   }
   #introsection h1,
   pre {
-    font-size: 25px;
+    font-size: 12px;
     white-space: pre-wrap;
   }
   #introsection h2 {

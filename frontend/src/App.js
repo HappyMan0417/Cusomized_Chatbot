@@ -64,7 +64,7 @@ function App() {
             </svg>
           </button>
         </div>
-        <h1>TalkBot</h1>
+        <h1 style={{paddingRight: "40px"}}>MetaBot</h1>
       </header>
       {showMenu && (
         <nav>
