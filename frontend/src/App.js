@@ -16,6 +16,9 @@ function App() {
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
 
+// Do something with the chatbot element
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
