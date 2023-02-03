@@ -158,7 +158,7 @@ nav svg {
   display: inline;
 }
 .chatLogWrapper {
-  height: 80vh;
+  height: 73vh;
   overflow-y: auto;
 }
 
@@ -263,6 +263,8 @@ nav svg {
 @media screen and (min-width: 768px) {
   .inputPromptWrapper {
     position: absolute;
+    overflow: hidden;
+
 
   }
 }
@@ -270,6 +272,7 @@ nav svg {
 @media screen and (max-width: 1024px) {
   .App {
     display: block;
+    /* overflow: hidden; */
     
   }
   header {
@@ -278,22 +281,34 @@ nav svg {
     background: #353441;
     border-bottom: 1px solid hsl(0deg 0% 100% / 20%);
     padding: 4px 0 0 12px;
+    /* overflow: hidden; */
+
   }
   nav {
     display: flex;
+    /* overflow: hidden; */
+
   }
   .sideMenu {
     display: none;
+    /* overflow: hidden; */
+
   }
   .chatBox {
     position: static;
+    /* overflow: hidden; */
+
     
   }
   .chatPromptWrapper {
     padding: 12px;
+    overflow: hidden;
+
   }
   .botMessageWrapper {
     padding: 12px;
+    overflow: hidden;
+
   }
   .userSVG {
     transform: scale(0.5);
