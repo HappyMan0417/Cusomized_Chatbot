@@ -333,3 +333,13 @@ nav svg {
     font-size: 14px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .recording-button {
+    display: inline;
+    position: absolute;
+    top: 19px;
+
+
+
+  }
+}

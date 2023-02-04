@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import NavLinks from "./components/NavLink";
 import BotResponse from "./components/BotResponse";
 import IntroSection from "./components/IntroSection";
+import { useSpeechRecognition } from 'react-speech-kit';
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,9 +17,15 @@ function App() {
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
 
-// Do something with the chatbot element
+
+  const { listen, stop } = useSpeechRecognition({
+    onResult: (result) => {
+      setInputPrompt(result);
+    },
+  });
+  // Do something with the chatbot element
   const baseurl = process.env.REACT_APP_URL;
-  console.log("base url "+baseurl);
+  console.log("base url " + baseurl);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +72,7 @@ function App() {
             </svg>
           </button>
         </div>
-        <h1 style={{paddingRight: "40px"}}>MetaBot</h1>
+        <h1 style={{ paddingRight: "40px" }}>MetaBot</h1>
       </header>
       {showMenu && (
         <nav>
@@ -275,8 +282,26 @@ function App() {
               onChange={(e) => setInputPrompt(e.target.value)}
               autoFocus
             ></input>
+            <button
+            className="recording-button"
+             type="button" onMouseDown={listen} onMouseUp={stop} 
+             
+             style={{
+              backgroundColor: "#444654",
+              color: "white",
+              borderRadius: "50px",
+              padding: "14px 22px",
+              textAlign: "center",
+              fontSize: "16px",
+              transform: "translateX(-50px)"
+            }}
+            
+            
+            >🎙</button>
+            
             <p></p>
           </div>
+
         </form>
       </section>
     </div>
