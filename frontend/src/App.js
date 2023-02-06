@@ -10,6 +10,7 @@ import NavLinks from "./components/NavLink";
 import BotResponse from "./components/BotResponse";
 import IntroSection from "./components/IntroSection";
 import { useSpeechRecognition } from 'react-speech-kit';
+import { default as Speak } from "react-text-to-speech";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div className="App">
+
       <header>
         <div className="menu">
           <button onClick={() => setShowMenu(true)}>
@@ -255,12 +257,18 @@ function App() {
                       {chat.botMessage ? (
                         <div id="botMessage">
                           <BotResponse response={chat.botMessage} />
+                          <Speak text={chat.botMessage} />
                         </div>
                       ) : err ? (
                         <Error err={err} />
                       ) : (
                         <Loading />
                       )}
+
+
+
+
+
                     </div>
                   </div>
                 </div>
@@ -283,22 +291,22 @@ function App() {
               autoFocus
             ></input>
             <button
-            className="recording-button"
-             type="button" onMouseDown={listen} onMouseUp={stop} 
-             
-             style={{
-              backgroundColor: "#444654",
-              color: "white",
-              borderRadius: "50px",
-              padding: "14px 22px",
-              textAlign: "center",
-              fontSize: "16px",
-              transform: "translateX(-50px)"
-            }}
-            
-            
+              className="recording-button"
+              type="button" onMouseDown={listen} onMouseUp={stop}
+
+              style={{
+                backgroundColor: "#444654",
+                color: "white",
+                borderRadius: "50px",
+                padding: "14px 22px",
+                textAlign: "center",
+                fontSize: "16px",
+                transform: "translateX(-50px)"
+              }}
+
+
             >🎙</button>
-            
+
             <p></p>
           </div>
 

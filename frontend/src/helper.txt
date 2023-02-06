@@ -1,0 +1,28 @@
+import React, { useState, useEffect } from "react";
+
+const TextToSpeech = () => {
+  const [voices, setVoices] = useState([]);
+
+  useEffect(() => {
+    const getVoices = () => {
+      setVoices(window.speechSynthesis.getVoices());
+    };
+
+    getVoices();
+    window.speechSynthesis.onvoiceschanged = getVoices;
+  }, []);
+
+  const speak = () => {
+    const utterance = new SpeechSynthesisUtterance("I love Bangladesh");
+    utterance.voice = voices[0];
+    window.speechSynthesis.speak(utterance);
+  };
+
+  return (
+    <div>
+      <button onClick={speak}>Speak</button>
+    </div>
+  );
+};
+
+export default TextToSpeech;

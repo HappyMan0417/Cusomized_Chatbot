@@ -11,6 +11,7 @@
     "react-scripts": "5.0.1",
     "react-speech-kit": "^3.0.1",
     "react-spinners": "^0.13.7",
+    "react-text-to-speech": "^0.3.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
