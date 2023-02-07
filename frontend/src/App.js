@@ -55,6 +55,21 @@ function App() {
     setInputPrompt("");
   };
 
+  const customStartBtnStyles = {
+    backgroundColor: '#444654',
+    // borderRadius: '30%',
+    padding: '4px',
+    color: 'white'
+  };
+
+  const customStopBtnStyles = {
+    backgroundColor: '#444654',
+    // borderRadius: '30%',
+    padding: '4px',
+
+    color: 'white'
+  };
+
   return (
     <div className="App">
 
@@ -257,7 +272,8 @@ function App() {
                       {chat.botMessage ? (
                         <div id="botMessage">
                           <BotResponse response={chat.botMessage} />
-                          <Speak text={chat.botMessage} />
+                          <Speak text={chat.botMessage} startBtn={<button style={customStartBtnStyles}>Voice On</button>} stopBtn={<button style={customStopBtnStyles}>Voice stop</button>} />
+
                         </div>
                       ) : err ? (
                         <Error err={err} />
