@@ -6,7 +6,7 @@ const IntroSection = () => {
     <div id="introsection">
       <h1>
         Introducing Meta ChatGPT
-        <BotResponse response=" - The Ultimate AI Assistant" />
+        {/* <BotResponse response=" " /> */}
       </h1>
       {/* <h2>
         A cutting-edge AI-powered app that provides instant answers to any
