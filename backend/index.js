@@ -25,7 +25,7 @@ const processData = (data) => {
   // console.log(data);
 };
 
-app.post('/', async (req, res) => {
+app.post('/api/', async (req, res) => {
   const message = req.body.message;
   const matchingData = dataArray.find((d) => d.name === message);
 
