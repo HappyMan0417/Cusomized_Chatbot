@@ -11,7 +11,7 @@ const csv = require('csv-parser');
 
 let dataArray = [];
 
-fs.createReadStream('products.csv')
+fs.createReadStream('idiya.csv')
   .pipe(csv())
   .on('data', (data) => {
     dataArray.push(data);
@@ -27,10 +27,10 @@ const processData = (data) => {
 
 app.post('/api/', async (req, res) => {
   const message = req.body.message;
-  const matchingData = dataArray.find((d) => message.includes(d.name) && message.includes("price") );
+  const matchingData = dataArray.find((d) => message.includes(d.name) );
 
   if (matchingData) {
-    res.json({ botResponse: "\n\n" + matchingData.name + " is  " +matchingData.price + "   taka"});
+    res.json({ botResponse: "\n\n" + matchingData.name + " is  " +matchingData.sku + "   taka"});
 
 
     return;
