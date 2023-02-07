@@ -27,10 +27,10 @@ const processData = (data) => {
 
 app.post('/api/', async (req, res) => {
   const message = req.body.message;
-  const matchingData = dataArray.find((d) => d.name === message);
+  const matchingData = dataArray.find((d) => message.includes(d.name) && message.includes("price") );
 
   if (matchingData) {
-    res.json({ botResponse: "\n\n" + matchingData.price });
+    res.json({ botResponse: "\n\n" + matchingData.name + " is  " +matchingData.price + "   taka"});
 
 
     return;
