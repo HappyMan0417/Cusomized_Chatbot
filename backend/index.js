@@ -37,6 +37,10 @@ app.post('/api/', async (req, res) => {
 
 
 
+  if (universalMatch) {
+    res.json({ botResponse: "\n\n" + universalMatch.name });
+    return;
+  }
 
 
 
@@ -57,8 +61,6 @@ app.post('/api/', async (req, res) => {
   const matchingData1 = dataArray.find((r) =>
     message.includes(r.name)
   );
-
-  console.log(matchingData1);
   if (matchingData1) {
 
     res.json({ botResponse: "\n\n" + " " + "  " + matchingData1.description });
@@ -69,10 +71,6 @@ app.post('/api/', async (req, res) => {
 
 
 
-  if (universalMatch) {
-    res.json({ botResponse: "\n\n" + universalMatch.name });
-    return;
-  }
 
 
 
