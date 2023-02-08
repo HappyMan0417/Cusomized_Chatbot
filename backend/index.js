@@ -27,49 +27,84 @@ const processData = (data) => {
 
 app.post('/api/', async (req, res) => {
   const message = req.body.message;
+
+
+
+
+  const universalMatch = dataArray.find((p) =>
+    message.includes(p.sku)
+  );
+
+
+
+
+
+
+
   const matchingData = dataArray.find((d) =>
-
-
-
     message.includes(d.name) && message.includes("sku")
-
-
-
-
-
-
-
   );
-
-  const matchingData1 = dataArray.find((r) =>
-
-
-
-    message.includes(r.name)
-
-
-
-
-
-
-
-  );
-
 
 
 
   if (matchingData) {
-    res.json({ botResponse: "\n\n" + matchingData.name + " is  " + matchingData.sku });
-
-
+    res.json({ botResponse: "\n\n" + matchingData.name + " of sku" + matchingData.sku });
     return;
   }
+
+
+
+  const matchingData1 = dataArray.find((r) =>
+    message.includes(r.name)
+  );
+
+  console.log(matchingData1);
   if (matchingData1) {
 
-    res.json({ botResponse: "\n\n" + "Description " + "  " + matchingData1.description });
+    res.json({ botResponse: "\n\n" + " " + "  " + matchingData1.description });
 
     return;
   }
+
+
+
+
+  if (universalMatch) {
+    res.json({ botResponse: "\n\n" + universalMatch.name });
+    return;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const API_KEY = process.env.OPENAI_API_KEY;
 
   try {
