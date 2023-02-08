@@ -37,10 +37,6 @@ app.post('/api/', async (req, res) => {
 
 
 
-  if (universalMatch) {
-    res.json({ botResponse: "\n\n" + universalMatch.name });
-    return;
-  }
 
 
 
@@ -90,6 +86,10 @@ app.post('/api/', async (req, res) => {
 
 
 
+  if (universalMatch) {
+    res.json({ botResponse: "\n\n" + universalMatch.name });
+    return;
+  }
 
 
 
