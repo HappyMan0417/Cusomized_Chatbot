@@ -45,7 +45,7 @@ app.post('/api/', async (req, res) => {
 
 
 
-    message.includes(r.name) 
+    message.includes(r.name)
 
 
 
@@ -64,9 +64,9 @@ app.post('/api/', async (req, res) => {
 
     return;
   }
-   if (matchingData1) {
+  if (matchingData1) {
 
-    res.json({ botResponse: "\n\n" + "Description "+"  " +matchingData1.description});
+    res.json({ botResponse: "\n\n" + "Description " + "  " + matchingData1.description });
 
     return;
   }
