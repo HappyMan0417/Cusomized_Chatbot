@@ -20,22 +20,56 @@ fs.createReadStream('idiya.csv')
     processData(dataArray);
   });
 
-  
+
 const processData = (data) => {
   // console.log(data);
 };
 
 app.post('/api/', async (req, res) => {
   const message = req.body.message;
-  const matchingData = dataArray.find((d) => message.includes(d.name) );
+  const matchingData = dataArray.find((d) =>
+
+
+
+    message.includes(d.name) && message.includes("sku")
+
+
+
+
+
+
+
+  );
+
+  const matchingData1 = dataArray.find((r) =>
+
+
+
+    message.includes(r.name) 
+
+
+
+
+
+
+
+  );
+
+
+
 
   if (matchingData) {
-    res.json({ botResponse: "\n\n" + matchingData.name + " is  " +matchingData.sku + "   taka"});
+    res.json({ botResponse: "\n\n" + matchingData.name + " is  " + matchingData.sku });
 
 
     return;
   }
+   if (matchingData1) {
 
+    res.json({ botResponse: "\n\n" + "Description "+"  " +matchingData1.description});
+
+    return;
+  }
   const API_KEY = process.env.OPENAI_API_KEY;
 
   try {
