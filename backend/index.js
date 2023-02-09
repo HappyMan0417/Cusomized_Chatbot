@@ -28,29 +28,109 @@ const processData = (data) => {
 app.post('/api/', async (req, res) => {
   const message = req.body.message;
 
-
-
-
-  const universalMatch = dataArray.find((p) =>
-    message.includes(p.sku)
-  );
-
-
-
-
-
-
-
-  const matchingData = dataArray.find((d) =>
+  const matchingSkuData = dataArray.find((d) =>
     message.includes(d.name) && message.includes("sku")
   );
 
-
-
-  if (matchingData) {
-    res.json({ botResponse: "\n\n" + matchingData.name + " of sku" + matchingData.sku });
+  if (matchingSkuData) {
+    res.json({ botResponse: "\n\n" + matchingSkuData.name + " of sku: " + matchingSkuData.sku });
     return;
   }
+
+  const matchingPriceData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("price")
+  );
+
+  if (matchingPriceData) {
+    res.json({ botResponse: "\n\n" + matchingPriceData.name + " of price: " + matchingPriceData.price });
+    return;
+  }
+
+  const matchingBrandData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("brand")
+  );
+
+  if (matchingBrandData) {
+    res.json({ botResponse: "\n\n" + matchingBrandData.name + " of brand: " + matchingBrandData.brand });
+    return;
+  }
+
+  const matchingQuantityData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("quantity")
+  );
+
+  if (matchingQuantityData) {
+    res.json({ botResponse: "\n\n" + matchingQuantityData.name + " of quantity: " + matchingQuantityData.quantity });
+    return;
+  }
+
+  const matchingWidthData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("width")
+  );
+
+  if (matchingWidthData) {
+    res.json({ botResponse: "\n\n" + matchingWidthData.name + " of width: " + matchingWidthData.width });
+    return;
+  }
+
+  const matchingHeightData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("height")
+  );
+
+  if (matchingHeightData) {
+    res.json({ botResponse: "\n\n" + matchingHeightData.name + " of height: " + matchingHeightData.height });
+    return;
+  }
+
+  const matchingLengthData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("length")
+  );
+
+  if (matchingLengthData) {
+    res.json({ botResponse: "\n\n" + matchingLengthData.name + " of length: " + matchingLengthData.length });
+    return;
+  }
+
+  const matchingWeightData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("Weight")
+  );
+
+  if (matchingWeightData) {
+    res.json({ botResponse: "\n\n" + matchingWeightData.name + " of weight: " + matchingWeightData.Weight });
+    return;
+  }
+  const matchingdescriptionData = dataArray.find((d) =>
+    message.includes(d.name) && message.includes("description")
+  );
+
+  if (matchingdescriptionData) {
+    res.json({ botResponse: "\n\n" + matchingdescriptionData.name + " of description: " + matchingdescriptionData.description });
+    return;
+  }
+
+ 
+
+
+  // const universalMatch = dataArray.find((p) =>
+  //   message.includes(p.sku)
+  // );
+
+
+
+
+
+
+
+  // const matchingData = dataArray.find((d) =>
+  //   message.includes(d.name) && message.includes("sku")
+  // );
+
+
+
+  // if (matchingData) {
+  //   res.json({ botResponse: "\n\n" + matchingData.name + " of sku" + matchingData.sku });
+  //   return;
+  // }
 
 
 
@@ -59,7 +139,7 @@ app.post('/api/', async (req, res) => {
   );
   if (matchingData1) {
 
-    res.json({ botResponse: "\n\n" + " " + "  " + matchingData1.description });
+    res.json({ botResponse: "\n\n" + " description" + "  " + matchingData1.description });
 
     return;
   }
@@ -86,10 +166,10 @@ app.post('/api/', async (req, res) => {
 
 
 
-  if (universalMatch) {
-    res.json({ botResponse: "\n\n" + universalMatch.name });
-    return;
-  }
+  // if (universalMatch) {
+  //   res.json({ botResponse: "\n\n" + universalMatch.name });
+  //   return;
+  // }
 
 
 
@@ -121,7 +201,7 @@ app.post('/api/', async (req, res) => {
         temperature: 0.5
       }
     });
-    res.json({ botResponse: response.data.choices[0].text });
+    res.json({ botResponse: "\n" + response.data.choices[0].text });
 
   } catch (error) {
     res.status(500).send({ error: 'Could not generate text completion' });
