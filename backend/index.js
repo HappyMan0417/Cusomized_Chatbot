@@ -27,22 +27,6 @@ const processData = (data) => {
 app.post("/api/", async (req, res) => {
   const message = req.body.message;
 
-  // const universalMatch = dataArray.find((p) => message.includes(p.sku));
-
-  // if (universalMatch) {
-  //   res.json({ botResponse: "\n\n" + universalMatch.name });
-  //   return;
-  // }
-
-  // const matchingData1 = dataArray.find((r) => message.includes(r.name));
-  // if (matchingData1) {
-  //   res.json({
-  //     botResponse: "\n\n" + " description" + "  " + matchingData1.description,
-  //   });
-
-  //   return;
-  // }
-
   const matchingSkuData = dataArray.find(
     (d) => message.includes(d.name) && message.includes("sku")
   );
