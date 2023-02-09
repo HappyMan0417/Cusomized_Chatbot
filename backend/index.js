@@ -25,138 +25,171 @@ const processData = (data) => {
 };
 
 app.post("/api/", async (req, res) => {
+  // const message = req.body.message;
+
+  // const matchingSkuData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("sku")
+  // );
+
+  // if (matchingSkuData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" + matchingSkuData.name + " of sku: " + matchingSkuData.sku,
+  //   });
+  //   return;
+  // }
+
+  // const matchingPriceData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("price")
+  // );
+
+  // if (matchingPriceData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingPriceData.name +
+  //       " of price: " +
+  //       matchingPriceData.price,
+  //   });
+  //   return;
+  // }
+
+  // const matchingBrandData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("brand")
+  // );
+
+  // if (matchingBrandData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingBrandData.name +
+  //       " of brand: " +
+  //       matchingBrandData.brand,
+  //   });
+  //   return;
+  // }
+
+  // const matchingQuantityData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("quantity")
+  // );
+
+  // if (matchingQuantityData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingQuantityData.name +
+  //       " of quantity: " +
+  //       matchingQuantityData.quantity,
+  //   });
+  //   return;
+  // }
+
+  // const matchingWidthData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("width")
+  // );
+
+  // if (matchingWidthData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingWidthData.name +
+  //       " of width: " +
+  //       matchingWidthData.width,
+  //   });
+  //   return;
+  // }
+
+  // const matchingHeightData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("height")
+  // );
+
+  // if (matchingHeightData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingHeightData.name +
+  //       " of height: " +
+  //       matchingHeightData.height,
+  //   });
+  //   return;
+  // }
+
+  // const matchingLengthData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("length")
+  // );
+
+  // if (matchingLengthData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingLengthData.name +
+  //       " of length: " +
+  //       matchingLengthData.length,
+  //   });
+  //   return;
+  // }
+
+  // const matchingWeightData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("Weight")
+  // );
+
+  // if (matchingWeightData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingWeightData.name +
+  //       " of weight: " +
+  //       matchingWeightData.Weight,
+  //   });
+  //   return;
+  // }
+  // const matchingdescriptionData = dataArray.find(
+  //   (d) => message.includes(d.name) && message.includes("description")
+  // );
+
+  // if (matchingdescriptionData) {
+  //   res.json({
+  //     botResponse:
+  //       "\n\n" +
+  //       matchingdescriptionData.name +
+  //       " of description: " +
+  //       matchingdescriptionData.description,
+  //   });
+  //   return;
+  // }
+
   const message = req.body.message;
 
-  const matchingSkuData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("sku")
-  );
+  const properties = [
+    { name: "name", property: "name" },
 
-  if (matchingSkuData) {
-    res.json({
-      botResponse:
-        "\n\n" + matchingSkuData.name + " of sku: " + matchingSkuData.sku,
-    });
-    return;
+    { name: "sku", property: "sku" },
+    { name: "price", property: "price" },
+    { name: "brand", property: "brand" },
+    { name: "quantity", property: "quantity" },
+    { name: "width", property: "width" },
+    { name: "height", property: "height" },
+    { name: "length", property: "length" },
+    { name: "weight", property: "Weight" },
+    { name: "description", property: "description" },
+  ];
+
+  for (const prop of properties) {
+    const matchingData = dataArray.find(
+      (d) => message.includes(d.name) && message.includes(prop.name)
+    );
+
+    if (matchingData) {
+      res.json({
+        botResponse: `\n\n${matchingData.name} of ${prop.name}: ${
+          matchingData[prop.property]
+        }`,
+      });
+      return;
+    }
   }
 
-  const matchingPriceData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("price")
-  );
-
-  if (matchingPriceData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingPriceData.name +
-        " of price: " +
-        matchingPriceData.price,
-    });
-    return;
-  }
-
-  const matchingBrandData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("brand")
-  );
-
-  if (matchingBrandData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingBrandData.name +
-        " of brand: " +
-        matchingBrandData.brand,
-    });
-    return;
-  }
-
-  const matchingQuantityData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("quantity")
-  );
-
-  if (matchingQuantityData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingQuantityData.name +
-        " of quantity: " +
-        matchingQuantityData.quantity,
-    });
-    return;
-  }
-
-  const matchingWidthData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("width")
-  );
-
-  if (matchingWidthData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingWidthData.name +
-        " of width: " +
-        matchingWidthData.width,
-    });
-    return;
-  }
-
-  const matchingHeightData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("height")
-  );
-
-  if (matchingHeightData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingHeightData.name +
-        " of height: " +
-        matchingHeightData.height,
-    });
-    return;
-  }
-
-  const matchingLengthData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("length")
-  );
-
-  if (matchingLengthData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingLengthData.name +
-        " of length: " +
-        matchingLengthData.length,
-    });
-    return;
-  }
-
-  const matchingWeightData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("Weight")
-  );
-
-  if (matchingWeightData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingWeightData.name +
-        " of weight: " +
-        matchingWeightData.Weight,
-    });
-    return;
-  }
-  const matchingdescriptionData = dataArray.find(
-    (d) => message.includes(d.name) && message.includes("description")
-  );
-
-  if (matchingdescriptionData) {
-    res.json({
-      botResponse:
-        "\n\n" +
-        matchingdescriptionData.name +
-        " of description: " +
-        matchingdescriptionData.description,
-    });
-    return;
-  }
+ 
 
   const API_KEY = process.env.OPENAI_API_KEY;
 
