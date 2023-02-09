@@ -111,9 +111,9 @@ app.post('/api/', async (req, res) => {
  
 
 
-  // const universalMatch = dataArray.find((p) =>
-  //   message.includes(p.sku)
-  // );
+  const universalMatch = dataArray.find((p) =>
+    message.includes(p.sku)
+  );
 
 
 
@@ -166,10 +166,10 @@ app.post('/api/', async (req, res) => {
 
 
 
-  // if (universalMatch) {
-  //   res.json({ botResponse: "\n\n" + universalMatch.name });
-  //   return;
-  // }
+  if (universalMatch) {
+    res.json({ botResponse: "\n\n" + universalMatch.name });
+    return;
+  }
 
 
 
