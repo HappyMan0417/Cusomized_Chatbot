@@ -34,14 +34,14 @@ app.post("/api/", async (req, res) => {
   //   return;
   // }
 
-  const matchingData1 = dataArray.find((r) => message.includes(r.name));
-  if (matchingData1) {
-    res.json({
-      botResponse: "\n\n" + " description" + "  " + matchingData1.description,
-    });
+  // const matchingData1 = dataArray.find((r) => message.includes(r.name));
+  // if (matchingData1) {
+  //   res.json({
+  //     botResponse: "\n\n" + " description" + "  " + matchingData1.description,
+  //   });
 
-    return;
-  }
+  //   return;
+  // }
 
   const matchingSkuData = dataArray.find(
     (d) => message.includes(d.name) && message.includes("sku")
