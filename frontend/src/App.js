@@ -17,11 +17,8 @@ function App() {
   const [inputPrompt, setInputPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
-  const chatDivRef = useRef(null);
 
-  useEffect(() => {
-    chatDivRef.current.scrollTop = chatDivRef.current.scrollHeight;
-  });
+
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
       setInputPrompt(result);
@@ -72,6 +69,11 @@ function App() {
 
     color: 'white'
   };
+  const chatDivRef = useRef(null);
+
+  useEffect(() => {
+    chatDivRef.current.scrollTop = chatDivRef.current.scrollHeight;
+  });
 
   return (
     <div className="App">
@@ -226,7 +228,7 @@ function App() {
         />
       </aside>
 
-      <section className="chatBox"  ref={chatDivRef} id="chatBox">
+      <section className="chatBox">
         {chatLog.length > 0 ? (
           <div className="chatLogWrapper">
             {chatLog.length > 0 &&
@@ -273,8 +275,8 @@ function App() {
                         </svg>
                       </Avatar>
                       {chat.botMessage ? (
-                        <div id="botMessage">
-                          <BotResponse response={chat.botMessage} />
+                        <div  ref={chatDivRef} id="botMessage">
+                          <BotResponse    response={chat.botMessage} />
                           <Speak text={chat.botMessage} startBtn={<button style={customStartBtnStyles}>Voice On</button>} stopBtn={<button style={customStopBtnStyles}>Voice stop</button>} />
 
                         </div>
