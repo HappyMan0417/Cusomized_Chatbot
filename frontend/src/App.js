@@ -1,6 +1,6 @@
 import "./normal.css";
 import "./App.css";
-import { useState } from "react";
+import { useState ,  useEffect, useRef} from "react";
 import Avatar from "./components/Avatar";
 import NewChat from "./components/NewChat";
 import NavPrompt from "./components/NavPrompt";
@@ -17,8 +17,11 @@ function App() {
   const [inputPrompt, setInputPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
+  const chatDivRef = useRef(null);
 
-
+  useEffect(() => {
+    chatDivRef.current.scrollTop = chatDivRef.current.scrollHeight;
+  });
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
       setInputPrompt(result);
@@ -223,7 +226,7 @@ function App() {
         />
       </aside>
 
-      <section className="chatBox">
+      <section className="chatBox"  ref={chatDivRef} id="chatBox">
         {chatLog.length > 0 ? (
           <div className="chatLogWrapper">
             {chatLog.length > 0 &&

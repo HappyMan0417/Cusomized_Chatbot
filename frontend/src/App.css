@@ -158,8 +158,10 @@ nav svg {
   display: inline;
 }
 .chatLogWrapper {
-  height: 73vh;
+  height: 77vh;
   overflow-y: auto;
+
+  
 }
 
 /* adding custom scrollbar */
