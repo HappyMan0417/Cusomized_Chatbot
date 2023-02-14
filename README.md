@@ -7,8 +7,16 @@ ChatGPT is a web-based chatbot application that uses OpenAI's GPT-3 language mod
 The application features a clean and modern user interface, and allows users to chat with the chatbot in real time. The GPT-3 model used in the application is the text-davinci-003 model, which is one of the most advanced language models currently available, and is capable of generating human-like responses to a wide variety of prompts.
 
 ChatGPT is designed to be easily deployable, and can be run on any system that supports Node.js and the OpenAI API. It can also be customized to fit specific use cases and domains, making it a powerful tool for developers and businesses looking to incorporate natural language processing into their applications.
+## Environment
+## Pre-requisite
+- You'll need to have your own OpenAi apikey to operate this package.
+1. Go to https://beta.openai.com/
+2. Select you profile menu and go to Manage API Keys
+3. Select + Create new secret key
+4. Copy generated key
 
-## File structure
+
+##  Installation
 #### `client` - Holds the client application
 - #### `public` - This holds all of our static files
 - #### `src`
