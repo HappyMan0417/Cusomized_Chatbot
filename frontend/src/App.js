@@ -1,6 +1,6 @@
 import "./normal.css";
 import "./App.css";
-import { useState,useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Avatar from "./components/Avatar";
 import NewChat from "./components/NewChat";
 import NavPrompt from "./components/NavPrompt";
@@ -9,9 +9,14 @@ import Error from "./components/Error";
 import NavLinks from "./components/NavLink";
 import BotResponse from "./components/BotResponse";
 import IntroSection from "./components/IntroSection";
-import { useSpeechRecognition } from 'react-speech-kit';
+import { useSpeechRecognition } from "react-speech-kit";
 import { default as Speak } from "react-text-to-speech";
+import { BsMic } from "react-icons/bs";
 
+// import { BsFillPlayFill } from "react-icons/bs";
+
+// import { MdSend } from "react-icons/md";
+import { IoSendSharp } from "react-icons/io5";
 function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [inputPrompt, setInputPrompt] = useState("");
@@ -19,7 +24,6 @@ function App() {
   const [err, setErr] = useState(false);
 
   const messagesEndRef = useRef(null);
-
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -66,23 +70,22 @@ function App() {
   };
 
   const customStartBtnStyles = {
-    backgroundColor: '#444654',
+    backgroundColor: "#444654",
     // borderRadius: '30%',
-    padding: '4px',
-    color: 'white'
+    padding: "4px",
+    color: "white",
   };
 
   const customStopBtnStyles = {
-    backgroundColor: '#444654',
+    backgroundColor: "#444654",
     // borderRadius: '30%',
-    padding: '4px',
+    padding: "4px",
 
-    color: 'white'
+    color: "white",
   };
 
   return (
     <div className="App">
-
       <header>
         <div className="menu">
           <button onClick={() => setShowMenu(true)}>
@@ -280,25 +283,28 @@ function App() {
                         </svg>
                       </Avatar>
                       {chat.botMessage ? (
-                        <div id="botMessage"  ref={messagesEndRef}>
-                          <BotResponse  response={chat.botMessage} />
-                          <Speak text={chat.botMessage} startBtn={<button style={customStartBtnStyles}>Voice On</button>} stopBtn={<button style={customStopBtnStyles}>Voice stop</button>} />
-
+                        <div id="botMessage" ref={messagesEndRef}>
+                          <BotResponse response={chat.botMessage} />
+                          <Speak
+                            text={chat.botMessage}
+                            startBtn={
+                              <button style={customStartBtnStyles}>
+                                Voice On
+                              </button>
+                            }
+                            stopBtn={
+                              <button style={customStopBtnStyles}>
+                                Voice stop
+                              </button>
+                            }
+                          />
                         </div>
-                        
                       ) : err ? (
                         <Error err={err} />
                       ) : (
                         <Loading />
                       )}
-
-
-
-
-
                     </div>
-                                              
-
                   </div>
                 </div>
               ))}
@@ -307,7 +313,7 @@ function App() {
           <IntroSection />
         )}
 
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <div className="inputPromptWrapper">
             <input
               name="inputPrompt"
@@ -324,21 +330,76 @@ function App() {
               type="button" onMouseDown={listen} onMouseUp={stop}
 
               style={{
-                backgroundColor: "#444654",
+                backgroundColor: "#41414E",
                 color: "white",
-                borderRadius: "50px",
-                padding: "14px 22px",
+                // borderRadius: "50px",
+                border: 0,
+                padding: "4px 22px",
                 textAlign: "center",
                 fontSize: "16px",
-                transform: "translateX(-50px)"
+                transform: "translateX(-120px)"
               }}
 
 
-            >🎙</button>
+            >
+            <BsMic/>
+            
+            
+            </button>
 
             <p></p>
           </div>
 
+        </form> */}
+        <form onSubmit={handleSubmit}>
+          <div className="inputPromptWrapper">
+            <input
+              name="inputPrompt"
+              id=""
+              className="inputPrompttTextarea"
+              type="text"
+              rows="1"
+              value={inputPrompt}
+              onChange={(e) => setInputPrompt(e.target.value)}
+              autoFocus
+            ></input>
+            <button
+              className="recording-button"
+              type="button"
+              onMouseDown={listen}
+              onMouseUp={stop}
+              style={{
+                backgroundColor: "#41414E",
+                color: "white",
+                // borderRadius: "50px",
+                border: 0,
+                padding: "4px 22px",
+                textAlign: "center",
+                fontSize: "16px",
+                transform: "translateX(-120px)",
+              }}
+            >
+              <BsMic />
+            </button>
+            <button
+                          className="send-button"
+
+              type="submit"
+              style={{
+                backgroundColor: "#41414E",
+                color: "white",
+                // borderRadius: "50px",
+                border: 0,
+                padding: "4px 22px",
+                textAlign: "center",
+                fontSize: "16px",
+                transform: "translateX(-132px)",
+              }}
+            >
+              <IoSendSharp />
+            </button>
+            <p></p>
+          </div>
         </form>
       </section>
     </div>
