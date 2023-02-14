@@ -1,4 +1,13 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat GPT</title>
+</head>
+<body>
+  <script>
     class ChatbotWidget {
       constructor() {
         this.widget = document.createElement("div");
@@ -15,7 +24,7 @@
       toggle() {
         if (!this.visible) {
           this.container.innerHTML =
-            '<iframe src="https://chat.idiya.co.nz/" width="370" height="450"  allow="microphone" ></iframe>';
+            '<iframe src="http://localhost:3006/" width="370" height="450"  allow="microphone" ></iframe>';
           this.container.style.display = "block";
           this.visible = true;
         } else {
@@ -30,3 +39,5 @@
     document.body.appendChild(chatbotWidget.widget);
 
   </script>
+</body>
+</html>

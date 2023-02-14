@@ -340,8 +340,9 @@ nav svg {
   .recording-button {
     display: inline;
     position: absolute;
-    top: 19px;
-
+    top: 30px;
+    right: -42px;
+       
 
 
   }
@@ -350,9 +351,8 @@ nav svg {
     .send-button {
       display: inline;
       position: absolute;
-      top: 19px;
-  
-  
+      top: 31px ;
+      right: -92px;
   
     }
 }
