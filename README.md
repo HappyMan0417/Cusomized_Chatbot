@@ -31,14 +31,14 @@ Before you begin, ensure you have met the following requirements:
 
 
 
-  ### frontend
+  ### Frontend
 - #### `1`  git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
 - #### `2`  cd frontend
 - #### `3`  npm install
 - #### `4`  Create a .env file in the frontend directory of the project.Add your environment variables to the .env file using the following format: REACT_APP_URL=backend api end point
 - #### `5`  npm start
 
-  ### backend
+  ### Backend
 - #### `1`  directory Custom-ChatGPT
 - #### `2`  cd backend
 - #### `3`  npm install
