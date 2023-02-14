@@ -5,7 +5,7 @@ const IntroSection = () => {
   return (
     <div id="introsection">
       <h1>
-        Introducing Meta ChatGPT
+        Introducing Custom ChatGPT
         {/* <BotResponse response=" " /> */}
       </h1>
       {/* <h2>

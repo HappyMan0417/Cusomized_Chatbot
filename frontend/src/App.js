@@ -112,7 +112,7 @@ function App() {
             </svg>
           </button>
         </div>
-        <h1 style={{ paddingRight: "40px" }}>Meta ChatGPT</h1>
+        <h1 style={{ paddingRight: "40px" }}>Custom ChatGPT</h1>
       </header>
       {showMenu && (
         <nav>
