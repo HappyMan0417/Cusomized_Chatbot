@@ -8,6 +8,12 @@ The application features a clean and modern user interface, and allows users to 
 
 ChatGPT is designed to be easily deployable, and can be run on any system that supports Node.js and the OpenAI API. It can also be customized to fit specific use cases and domains, making it a powerful tool for developers and businesses looking to incorporate natural language processing into their applications.
 ## Environment
+
+Before you begin, ensure you have met the following requirements:
+
+1. You have installed Node.js and npm on your machine.
+2. You have an API key or other credentials for any necessary third-party services or APIs.
+
 ## Pre-requisite
 #### You'll need to have your own OpenAi apikey to operate this package.
 1. Go to https://beta.openai.com/
@@ -16,46 +22,49 @@ ChatGPT is designed to be easily deployable, and can be run on any system that s
 4. Copy generated key
 
 
-##  Installation
- 1. 
-- #### `1` - git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
-- #### `src`
-    - #### `assets` - This folder holds assets such as images, docs, and fonts
-    - #### `components` - This folder holds all of the different components that will make up our views
-    - #### `views` - These represent a unique page on the website i.e. Home or About. These are still normal react components.
-    - #### `App.js` - This is what renders all of our browser routes and different views
-    - #### `index.js` - This is what renders the react app by rendering App.js, should not change
-- #### `package.json` - Defines npm behaviors and packages for the client
-#### `server` - Holds the server application
-- #### `config` - This holds our configuration files, like mongoDB uri
-- #### `controllers` - These hold all of the callback functions that each route will call
-- #### `models` - This holds all of our data models
-- #### `routes` - This holds all of our HTTP to URL path associations for each unique url
-- #### `tests` - This holds all of our server tests that we have defined
-- #### `server.js` - Defines npm behaviors and packages for the client
-#### `package.json` - Defines npm behaviors like the scripts defined in the next section of the README
-#### `.gitignore` - Tells git which files to ignore
-#### `README` - This file!
+##  Installation 
+
+#### `Custom-ChatGPT` - name of the folder/directory
+- #### `frontend` - This holds our frontend files, 
+- #### `backend` - These holds our backend files
+- #### `botscript` - Copy the script code and use 
+
+
+
+  ### frontend
+- #### `1`  git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
+- #### `2`  cd frontend
+- #### `3`  npm install
+- #### `4`  Create a .env file in the frontend directory of the project.Add your environment variables to the .env file using the following format: REACT_APP_URL=backend api end point
+- #### `5`  npm start
+
+  ### backend
+- #### `1`  directory Custom-ChatGPT
+- #### `2`  cd backend
+- #### `3`  npm install
+- #### `4`  Create a .env file in the backend directory of the project.Add your environment variables to the .env file using the following format: OPENAI_API_KEY=generated key
+- #### `5`  node index.js
+
+
+
+
+
 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run-script dev`
+### `npm start`
 
-Runs both the client app and the server app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view the client in the browser.
+Runs both the client app Open [http://localhost:3006]
 
-### `npm run-script client`
+### `node index.js`
 
-Runs just the client app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view the client in the browser.
+Runs just the server app Open [http://localhost:5000]
 
 
-### `npm run-script server`
 
-Runs just the server in development mode.<br>
 
 
 ### `npm run build`
@@ -77,6 +86,3 @@ To learn how to deploy a full-stack web app to heroku, check out [this great gui
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
