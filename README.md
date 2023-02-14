@@ -1,17 +1,10 @@
-##_**DISCLAIMER**_
-This project has moved maintainers and is no longer developed here. The up to date template can be found [here](https://github.com/rennemannd/MERN-Template).
-
-#### _**IMPORTANT NOTE**_ - 
-This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
-- local development: create a config file (make sure to name it config.js) in the config folder, which exports your db.uri connection. An example is provided, config/config.example.js. This file will be ignored by git so your db credentials will be kept safe when the app is deployed.
-- production: Since the config file is not pushed when you deploy your app, you must specifiy your db uri in heorku. Set the uri in heroku as specified in [this](https://devcenter.heroku.com/articles/config-vars) resource. Make sure you name the environement variable "DB_URI".
-
+## ChatGPT- Custom ChatGPT Q&A system for a Company,Ecommerce anything else
 ## Getting Started
-This repository aims to assist you in beginning work on a MERN stack application with a solid file structure as a foundation. To get started make a copy of this template repo for your project teams.
+ChatGPT is a web-based chatbot application that uses OpenAI's GPT-3 language model to generate natural language responses to user inputs. The application was developed using React, Express, and Node.js, and the OpenAI API was accessed using the `@openai/ai-engine` package.
 
-Since this project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json .
+The application features a clean and modern user interface, and allows users to chat with the chatbot in real time. The GPT-3 model used in the application is the text-davinci-003 model, which is one of the most advanced language models currently available, and is capable of generating human-like responses to a wide variety of prompts.
 
-This app can be deployed directly to heroku since there is a script defined in package.json which will automatically handle building and deploying the app. For more information on deploying to heroku reference the extra resources at the bottom of this file. 
+ChatGPT is designed to be easily deployable, and can be run on any system that supports Node.js and the OpenAI API. It can also be customized to fit specific use cases and domains, making it a powerful tool for developers and businesses looking to incorporate natural language processing into their applications.
 
 ## File structure
 #### `client` - Holds the client application
