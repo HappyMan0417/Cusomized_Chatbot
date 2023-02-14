@@ -5,6 +5,7 @@ The repository contains code for a Custom ChatGPT built using React, Express, an
 
 <img src="/screenshot/ss.png" alt="Alt text" title="Optional title">
 
+<img src="/screenshot/ss2.png" alt="Alt text" title="Optional title">
 
 
 ## Getting Started
