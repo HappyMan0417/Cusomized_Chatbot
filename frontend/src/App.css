@@ -342,7 +342,7 @@ nav svg {
   background-color: #444654;
   color: white;
   border: 0;
-  /* transform: translate(700px, 1px)  */
+  transform: translate(700px, 1px) 
 
 
 
@@ -368,13 +368,19 @@ nav svg {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 767px) {
   .micPosition {
     padding: 4px;
     background-color: #444654;
     color: white;
     border: 0;
-    /* transform: translate(100px, 1px)  */
-
+    transform: translate(257px, -6px);
   }
+  .chatLogWrapper {
+    height: 72vh;
+    overflow-y: auto;
+  
+    
+  }
+  
 }

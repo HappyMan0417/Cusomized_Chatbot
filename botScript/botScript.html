@@ -13,7 +13,7 @@
         this.widget = document.createElement("div");
         this.widget.innerHTML =
           '<button id="toggle-chatbot" style="position: absolute; bottom: 0; right: 0; margin-right: 30px; margin-bottom: 10px; z-index: 1; background-color: blue; border-radius: 5px; color: white; padding: 10px 15px; font-size: 14px;">Message Bot</button>' +
-          '<div id="chatbot-container" style="position: absolute; bottom: 0; right: 0; padding-bottom: 49px; display: none; z-index: 0; "></div>';
+          '<div id="chatbot-container" style="position: absolute; bottom: 0; right: 0; padding-bottom: 59px;padding-right: 70px;  display: none; z-index: 0; "></div>';
         this.button = this.widget.querySelector("#toggle-chatbot");
         this.container = this.widget.querySelector("#chatbot-container");
         this.visible = false;
@@ -24,7 +24,7 @@
       toggle() {
         if (!this.visible) {
           this.container.innerHTML =
-            '<iframe src="http://localhost:3006/" width="370" height="450"  allow="microphone" ></iframe>';
+            '<iframe src="http://localhost:3006/" width="370" height="460"  allow="microphone" ></iframe>';
           this.container.style.display = "block";
           this.visible = true;
         } else {
