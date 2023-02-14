@@ -17,8 +17,8 @@ ChatGPT is designed to be easily deployable, and can be run on any system that s
 
 
 ##  Installation
-#### 1. git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
-- #### `public` - This holds all of our static files
+ 1. 
+- #### `1` - git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
 - #### `src`
     - #### `assets` - This folder holds assets such as images, docs, and fonts
     - #### `components` - This folder holds all of the different components that will make up our views
