@@ -1,6 +1,6 @@
 import "./normal.css";
 import "./App.css";
-import { useState ,  useEffect, useRef} from "react";
+import { useState,useRef,useEffect } from "react";
 import Avatar from "./components/Avatar";
 import NewChat from "./components/NewChat";
 import NavPrompt from "./components/NavPrompt";
@@ -18,6 +18,16 @@ function App() {
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
 
+  const messagesEndRef = useRef(null);
+
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatLog]);
 
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
@@ -69,11 +79,6 @@ function App() {
 
     color: 'white'
   };
-  const chatDivRef = useRef(null);
-
-  useEffect(() => {
-    chatDivRef.current.scrollTop = chatDivRef.current.scrollHeight;
-  });
 
   return (
     <div className="App">
@@ -275,11 +280,12 @@ function App() {
                         </svg>
                       </Avatar>
                       {chat.botMessage ? (
-                        <div  ref={chatDivRef} id="botMessage">
-                          <BotResponse    response={chat.botMessage} />
+                        <div id="botMessage"  ref={messagesEndRef}>
+                          <BotResponse  response={chat.botMessage} />
                           <Speak text={chat.botMessage} startBtn={<button style={customStartBtnStyles}>Voice On</button>} stopBtn={<button style={customStopBtnStyles}>Voice stop</button>} />
 
                         </div>
+                        
                       ) : err ? (
                         <Error err={err} />
                       ) : (
@@ -291,6 +297,8 @@ function App() {
 
 
                     </div>
+                                              
+
                   </div>
                 </div>
               ))}
