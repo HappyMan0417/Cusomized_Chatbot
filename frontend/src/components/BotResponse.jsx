@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const BotResponse = ({ response }) => {
-  const [botResoponse, setBotResponse] = useState("");
+  const [botResponse, setBotResponse] = useState("");
+  const containerRef = useRef(null);
 
   useEffect(() => {
     let index = 1;
@@ -15,10 +15,18 @@ const BotResponse = ({ response }) => {
     }, 100);
   }, [response]);
 
+  
+  const scrollToBottom = () => {
+    containerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [botResponse]);
+
   return (
-    <pre>
-      {botResoponse}
-      {botResoponse === response ? "" : "|"}
+    <pre ref={containerRef}>
+      {botResponse}
+      {botResponse === response ? "" : "|"}
     </pre>
   );
 };
