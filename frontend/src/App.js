@@ -71,10 +71,12 @@ function App() {
   };
 
   const customStartBtnStyles = {
-    backgroundColor: "#444654",
     // borderRadius: '30%',
     padding: "4px",
+    backgroundColor: "#444654",
     color: "white",
+    // borderRadius: "50px",
+    border: 0,
   };
 
   const customStopBtnStyles = {
@@ -83,6 +85,8 @@ function App() {
     padding: "4px",
 
     color: "white",
+    border: 0,
+
   };
 
   return (
@@ -289,7 +293,7 @@ function App() {
                           <Speak
                             text={chat.botMessage}
                             startBtn={
-                              <button style={customStartBtnStyles}>
+                              <button style={customStartBtnStyles } >
                                 <BsMicFill />{" "}
                               </button>
                             }
