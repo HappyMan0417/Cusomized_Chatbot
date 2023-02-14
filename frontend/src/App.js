@@ -69,7 +69,8 @@ function App() {
     callAPI();
     setInputPrompt("");
   };
-
+  const x = 700;
+  const y = 1;
   const customStartBtnStyles = {
     // borderRadius: '30%',
     padding: "4px",
@@ -77,6 +78,9 @@ function App() {
     color: "white",
     // borderRadius: "50px",
     border: 0,
+    transform: `translate(${x}px, ${y}px)` 
+  
+  
   };
 
   const customStopBtnStyles = {
@@ -86,6 +90,7 @@ function App() {
 
     color: "white",
     border: 0,
+    transform: `translate(${x}px, ${y}px)` 
 
   };
 
@@ -360,7 +365,7 @@ function App() {
           <div className="inputPromptWrapper">
             <input
               name="inputPrompt"
-              autocomplete="off"
+              // autocomplete="off"
               id=""
               className="inputPrompttTextarea"
               type="text"
