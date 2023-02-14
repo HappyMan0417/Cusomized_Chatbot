@@ -62,7 +62,7 @@ const response = await openai.createCompletion({
 });
 
 
-javascript```
+```
 
 
 
