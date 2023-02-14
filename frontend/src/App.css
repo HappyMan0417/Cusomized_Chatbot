@@ -254,12 +254,13 @@ nav svg {
   resize: none;
   font-size: 16px;
   background-color: #41414e;
-  color: #fff;
+  color: #f8f6f6;
   outline: none;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
   overflow-y: hidden;
+
 }
 
 @media screen and (min-width: 768px) {

@@ -355,6 +355,8 @@ function App() {
           <div className="inputPromptWrapper">
             <input
               name="inputPrompt"
+              autocomplete="off"
+
               id=""
               className="inputPrompttTextarea"
               type="text"
