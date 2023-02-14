@@ -1,4 +1,4 @@
-## ChatGPT- Custom ChatGPT Q&A system for a Company,Ecommerce anything else
+# ChatGPT- Custom ChatGPT Q&A system 
 ## Getting Started
 ChatGPT is a web-based chatbot application that uses OpenAI's GPT-3 language model to generate natural language responses to user inputs. The application was developed using React, Express, and Node.js, and the OpenAI API was accessed using the `@openai/ai-engine` package.
 
