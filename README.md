@@ -2,6 +2,11 @@
 
 The repository contains code for a Custom ChatGPT built using React, Express, and Node.js. The chatbot is powered by OpenAI's text-davinci-003 language model and Custom dataset.
 
+
+<img src="/screenshot/ss.png" alt="Alt text" title="Optional title">
+
+
+
 ## Getting Started
 
 ChatGPT is a web-based chatbot application that uses OpenAI's GPT-3 language model to generate natural language responses to user inputs. The application was developed using React, Express, and Node.js, and the OpenAI API was accessed using the `@openai/ai-engine` package.
