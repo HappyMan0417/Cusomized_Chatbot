@@ -13,7 +13,8 @@ import { useSpeechRecognition } from "react-speech-kit";
 import { default as Speak } from "react-text-to-speech";
 import { BsMic } from "react-icons/bs";
 
-// import { BsFillPlayFill } from "react-icons/bs";
+import { BsMicFill } from "react-icons/bs";
+import { BsMicMuteFill } from "react-icons/bs";
 
 // import { MdSend } from "react-icons/md";
 import { IoSendSharp } from "react-icons/io5";
@@ -289,12 +290,12 @@ function App() {
                             text={chat.botMessage}
                             startBtn={
                               <button style={customStartBtnStyles}>
-                                Voice On
+                                <BsMicFill />{" "}
                               </button>
                             }
                             stopBtn={
                               <button style={customStopBtnStyles}>
-                                Voice stop
+                                 <BsMicMuteFill/>
                               </button>
                             }
                           />
@@ -356,7 +357,6 @@ function App() {
             <input
               name="inputPrompt"
               autocomplete="off"
-
               id=""
               className="inputPrompttTextarea"
               type="text"
@@ -384,8 +384,7 @@ function App() {
               <BsMic />
             </button>
             <button
-                          className="send-button"
-
+              className="send-button"
               type="submit"
               style={{
                 backgroundColor: "#41414E",
