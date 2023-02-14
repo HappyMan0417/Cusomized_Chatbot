@@ -69,30 +69,30 @@ function App() {
     callAPI();
     setInputPrompt("");
   };
-  const x = 700;
-  const y = 1;
-  const customStartBtnStyles = {
-    // borderRadius: '30%',
-    padding: "4px",
-    backgroundColor: "#444654",
-    color: "white",
-    // borderRadius: "50px",
-    border: 0,
-    transform: `translate(${x}px, ${y}px)` 
+  // const x = 700;
+  // const y = 1;
+  // const customStartBtnStyles = {
+  //   // borderRadius: '30%',
+  //   padding: "4px",
+  //   backgroundColor: "#444654",
+  //   color: "white",
+  //   // borderRadius: "50px",
+  //   border: 0,
+  //   transform: `translate(${x}px, ${y}px)` 
   
   
-  };
+  // };
 
-  const customStopBtnStyles = {
-    backgroundColor: "#444654",
-    // borderRadius: '30%',
-    padding: "4px",
+  // const customStopBtnStyles = {
+  //   backgroundColor: "#444654",
+  //   // borderRadius: '30%',
+  //   padding: "4px",
 
-    color: "white",
-    border: 0,
-    transform: `translate(${x}px, ${y}px)` 
+  //   color: "white",
+  //   border: 0,
+  //   transform: `translate(${x}px, ${y}px)` 
 
-  };
+  // };
 
   return (
     <div className="App">
@@ -298,12 +298,12 @@ function App() {
                           <Speak
                             text={chat.botMessage}
                             startBtn={
-                              <button style={customStartBtnStyles } >
+                              <button  className="micPosition" >
                                 <BsMicFill />{" "}
                               </button>
                             }
                             stopBtn={
-                              <button style={customStopBtnStyles}>
+                              <button   className="micPosition">
                                  <BsMicMuteFill/>
                               </button>
                             }
@@ -365,7 +365,7 @@ function App() {
           <div className="inputPromptWrapper">
             <input
               name="inputPrompt"
-              // autocomplete="off"
+              autocomplete="off"
               id=""
               className="inputPrompttTextarea"
               type="text"

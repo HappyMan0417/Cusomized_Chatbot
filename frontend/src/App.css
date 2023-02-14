@@ -336,6 +336,17 @@ nav svg {
     font-size: 14px;
   }
 }
+
+.micPosition{
+  padding: 4px;
+  background-color: #444654;
+  color: white;
+  border: 0;
+  /* transform: translate(700px, 1px)  */
+
+
+
+}
 @media only screen and (max-width: 767px) {
   .recording-button {
     display: inline;
@@ -355,4 +366,15 @@ nav svg {
       right: -92px;
   
     }
+}
+
+@media only screen and (max-width: 320px) {
+  .micPosition {
+    padding: 4px;
+    background-color: #444654;
+    color: white;
+    border: 0;
+    /* transform: translate(100px, 1px)  */
+
+  }
 }
