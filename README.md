@@ -9,7 +9,7 @@ The application features a clean and modern user interface, and allows users to 
 ChatGPT is designed to be easily deployable, and can be run on any system that supports Node.js and the OpenAI API. It can also be customized to fit specific use cases and domains, making it a powerful tool for developers and businesses looking to incorporate natural language processing into their applications.
 ## Environment
 ## Pre-requisite
-## You'll need to have your own OpenAi apikey to operate this package.
+#### You'll need to have your own OpenAi apikey to operate this package.
 1. Go to https://beta.openai.com/
 2. Select you profile menu and go to Manage API Keys
 3. Select + Create new secret key
@@ -17,7 +17,7 @@ ChatGPT is designed to be easily deployable, and can be run on any system that s
 
 
 ##  Installation
-#### git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
+#### 1. git clone git@github.com:MohammadAtikurRahman/Custom-ChatGPT.git
 - #### `public` - This holds all of our static files
 - #### `src`
     - #### `assets` - This folder holds assets such as images, docs, and fonts
